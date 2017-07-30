@@ -16,10 +16,14 @@
 <meta property="og:site_name" content="xuptacm">
 <meta property="og:description" content="hexo 新建一篇文章给它添加分类和标签:">
 <meta property="og:locale" content="chinese">
-<meta property="og:updated_time" content="2017-07-30T12:08:05.131Z">
+<meta property="og:image" content="http://image.liuxianan.com/201608/20160823_183047_352_1475.png?_=5800863">
+<meta property="og:image" content="http://image.liuxianan.com/201608/20160823_183325_470_9306.png?_=5800863">
+<meta property="og:image" content="http://image.liuxianan.com/201608/20160823_184852_854_6502.png?_=5800863">
+<meta property="og:updated_time" content="2017-07-30T12:17:52.575Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo 新建一篇文章给它添加分类和标签">
 <meta name="twitter:description" content="hexo 新建一篇文章给它添加分类和标签:">
+<meta name="twitter:image" content="http://image.liuxianan.com/201608/20160823_183047_352_1475.png?_=5800863">
   
     <link rel="alternative" href="/atom.xml" title="xuptacm" type="application/atom+xml">
   
@@ -65,6 +69,8 @@
 				<li><a href="https://github.com/xuptacm/">GitHub</a></li>
 	        
 				<li><a href="https://maxiang.io/">马克飞象</a></li>
+	        
+				<li><a href="/categories/hexo">essay</a></li>
 	        
 			</ul>
 		</nav>
@@ -126,6 +132,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -146,13 +154,15 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="https://xuptacm.github.io/">主页</a></li>
+					<li style="width: 20%"><a href="https://xuptacm.github.io/">主页</a></li>
 		        
-					<li style="width: 25%"><a href="https://xuptacm.github.io/">随笔</a></li>
+					<li style="width: 20%"><a href="https://xuptacm.github.io/">随笔</a></li>
 		        
-					<li style="width: 25%"><a href="https://github.com/xuptacm/">GitHub</a></li>
+					<li style="width: 20%"><a href="https://github.com/xuptacm/">GitHub</a></li>
 		        
-					<li style="width: 25%"><a href="https://maxiang.io/">马克飞象</a></li>
+					<li style="width: 20%"><a href="https://maxiang.io/">马克飞象</a></li>
+		        
+					<li style="width: 20%"><a href="/categories/hexo">essay</a></li>
 		        
 				</ul>
 			</nav>
@@ -188,8 +198,18 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>hexo 新建一篇文章给它添加分类和标签:<br><a id="more"></a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new page &quot;Hexo&quot;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: title </div><div class="line">date: 2016-06-01 23:47:44 </div><div class="line">categories: &quot;Hexo&quot;</div><div class="line">tags: </div><div class="line">     - 1</div><div class="line">     - 2</div><div class="line"> description: </div><div class="line">---</div></pre></td></tr></table></figure>
+<h2 id="hexo-新建一篇文章给它添加分类和标签"><a href="#hexo-新建一篇文章给它添加分类和标签" class="headerlink" title="hexo 新建一篇文章给它添加分类和标签:"></a>hexo 新建一篇文章给它添加分类和标签:</h2><p>定位到我们的hexo根目录，执行命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new page &quot;Hexo&quot;</div></pre></td></tr></table></figure></p>
+<p>hexo会帮我们在_posts下生成相关md文件：<br><img src="http://image.liuxianan.com/201608/20160823_183047_352_1475.png?_=5800863" alt="这里写图片描述"></p>
+<p>我们只需要打开这个文件就可以开始写博客了，默认生成如下内容：</p>
+<p><img src="http://image.liuxianan.com/201608/20160823_183325_470_9306.png?_=5800863" alt="这里写图片描述"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">title: postName #文章页面上的显示名称，一般是中文</div><div class="line">date: 2013-12-02 15:30:16 #文章生成时间，一般不改，当然也可以任意修改</div><div class="line">categories: 默认分类 #分类</div><div class="line">tags:</div><div class="line"> [tag1,tag2,tag3] #文章标签，可空，多标签请用格式，注意:后面有个空格</div><div class="line">description: 附加一段文章摘要，字数最好在140字以内，会出现在meta的description里面</div><div class="line">例如</div><div class="line">---</div><div class="line">title: title </div><div class="line">date: 2016-06-01 23:47:44 </div><div class="line">categories: &quot;Hexo&quot;</div><div class="line">tags: </div><div class="line">     - 1</div><div class="line">     - 2</div><div class="line"> description: </div><div class="line">---</div></pre></td></tr></table></figure></p>
+<p>那么hexo new page ‘postName’命令和hexo new ‘postName’有什么区别呢？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new page &quot;my-second-blog&quot;</div></pre></td></tr></table></figure>
+<p>最终部署时生成：hexo\public\my-second-blog\index.html，但是它不会作为文章出现在博文目录。<br><img src="http://image.liuxianan.com/201608/20160823_184852_854_6502.png?_=5800863" alt="这里写图片描述"><br>写博客工具</p>
+<p>自己使用markdownpro。</p>
+<p> 如何让博文列表不显示全部内容</p>
+<p>默认情况下，生成的博文目录会显示全部的文章内容，如何设置文章摘要的长度呢？</p>
+<p>答案是在合适的位置加上<!--more-->即可，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">使用github pages服务搭建博客的好处有：</div><div class="line"></div><div class="line">1. 全是静态文件，访问速度快；</div><div class="line">2. 免费方便，不用花一分钱就可以搭建一个自由的个人博客，不需要服务器不需要后台；</div><div class="line">3. 可以随意绑定自己的域名，不仔细看的话根本看不出来你的网站是基于github的；</div><div class="line"></div><div class="line">&lt;!--more--&gt;</div><div class="line"></div><div class="line">4. 数据绝对安全，基于github的版本管理，想恢复到哪个历史版本都行；</div><div class="line">5. 博客内容可以轻松打包、转移、发布到其它平台；</div><div class="line">6. 等等；</div></pre></td></tr></table></figure></p>
+
       
 
       
@@ -435,15 +455,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">hexo教程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">建立站点</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">hexo搭建博客</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hexo教程</a>
               </li>
             
             <div class="clearfix"></div>
