@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://xuptacm.github.io">
-  <title>article-title | xuptacm</title>
+  <title>hexo搭建博客文章目录分析 | xuptacm</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是我的博客  这是我的博客  这是我的博客  这是我的博客">
+  <meta name="description" content="这是我的博客">
+<meta name="keywords" content="建立站点,hexo搭建博客">
 <meta property="og:type" content="article">
-<meta property="og:title" content="article-title">
+<meta property="og:title" content="hexo搭建博客文章目录分析">
 <meta property="og:url" content="https://xuptacm.github.io/2017/07/29/article-title/index.html">
 <meta property="og:site_name" content="xuptacm">
-<meta property="og:description" content="这是我的博客  这是我的博客  这是我的博客  这是我的博客">
+<meta property="og:description" content="这是我的博客">
 <meta property="og:locale" content="chinese">
-<meta property="og:updated_time" content="2017-07-30T04:54:01.166Z">
+<meta property="og:updated_time" content="2017-07-30T05:41:31.734Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="article-title">
-<meta name="twitter:description" content="这是我的博客  这是我的博客  这是我的博客  这是我的博客">
+<meta name="twitter:title" content="hexo搭建博客文章目录分析">
+<meta name="twitter:description" content="这是我的博客">
   
     <link rel="alternative" href="/atom.xml" title="xuptacm" type="application/atom+xml">
   
@@ -61,6 +62,8 @@
 	        
 				<li><a href="https://xuptacm.github.io/">随笔</a></li>
 	        
+				<li><a href="https://github.com/xuptacm/">GitHub</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -86,6 +89,8 @@
 					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 		        
 					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+		        
+					<a class="mail" target="_blank" href="/reginaldliu@foxmail.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -115,6 +120,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -126,16 +133,20 @@
 			        
 						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
 			        
+						<a class="mail" target="_blank" href="/reginaldliu@foxmail.com" title="mail"><i class="icon-mail"></i></a>
+			        
 				</div>
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="https://xuptacm.github.io/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="https://xuptacm.github.io/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="https://xuptacm.github.io/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="https://xuptacm.github.io/">随笔</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="https://github.com/xuptacm/">GitHub</a></li>
 		        
 				</ul>
 			</nav>
@@ -157,7 +168,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      article-title
+      hexo搭建博客文章目录分析
     </h1>
   
 
@@ -172,11 +183,28 @@
       
         <p>这是我的博客</p>
 <hr>
+<a id="more"></a>
 <p>这是我的博客</p>
 <hr>
-<p>这是我的博客</p>
-<hr>
-<p>这是我的博客</p>
+<p><a href="https://hexo.io/zh-cn/docs/front-matter.html" target="_blank" rel="external">https://hexo.io/zh-cn/docs/front-matter.html</a></p>
+<h1 id="分类和标签"><a href="#分类和标签" class="headerlink" title="分类和标签"></a>分类和标签</h1><p>只有文章支持分类和标签，您可以在 Front-matter 中设置。在其他系统中，分类和标签听起来很接近，但是在 Hexo 中两者有着明显的差别：分类具有顺序性和层次性，也就是说 Foo, Bar 不等于 Bar, Foo；而标签没有顺序和层次。</p>
+<p>`categories:</p>
+<ul>
+<li>Diary<br>tags:</li>
+<li>PS3</li>
+<li>Games `</li>
+</ul>
+<h1 id="分类方法的分歧"><a href="#分类方法的分歧" class="headerlink" title="分类方法的分歧"></a>分类方法的分歧</h1><p>如果您有过使用WordPress的经验，就很容易误解Hexo的分类方式。WordPress支持对一篇文章设置多个分类，而且这些分类可以是同级的，也可以是父子分类。但是Hexo不支持指定多个同级分类。<br>下面的指定方法：</p>
+<p>`categories:</p>
+<ul>
+<li>Diary</li>
+<li>Life`</li>
+</ul>
+<p>会使分类Life成为Diary的子分类，而不是并列分类。因此，有必要为您的文章选择尽可能准确的分类。</p>
+<h1 id="JSON-Front-matter"><a href="#JSON-Front-matter" class="headerlink" title="JSON Front-matter"></a>JSON Front-matter</h1><p>除了 YAML 外，你也可以使用 JSON 来编写 Front-matter，只要将 — 代换成 ;;; 即可。</p>
+<p><code>&quot;title&quot;: &quot;Hello World&quot;,
+&quot;date&quot;: &quot;2013/7/13 20:46:25&quot;
+;;;</code></p>
 
       
 
@@ -206,7 +234,33 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">建立站点</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">hexo搭建博客</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/HEXO/" class="article-tag-list-link color5">HEXO</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
