@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://xuptacm.github.io">
   <title>python爬虫定向爬取中国大学排名 | xuptacm&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="12345678910111213141516171819202122232425262728293031323334#CrawUnivRankingA.pyimport requestsfrom bs4 import BeautifulSoupimport bs4 def getHTMLText(url):    try:        r = requests.get(url, timeout">
+  <meta name="description" content="python爬虫定向爬取中国大学排名">
 <meta name="keywords" content="爬虫,requests库">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python爬虫定向爬取中国大学排名">
 <meta property="og:url" content="https://xuptacm.github.io/2017/08/02/python爬虫定向爬取中国大学排名/index.html">
 <meta property="og:site_name" content="xuptacm&#39;s blog">
-<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334#CrawUnivRankingA.pyimport requestsfrom bs4 import BeautifulSoupimport bs4 def getHTMLText(url):    try:        r = requests.get(url, timeout">
+<meta property="og:description" content="python爬虫定向爬取中国大学排名">
 <meta property="og:locale" content="chinese">
-<meta property="og:updated_time" content="2017-08-02T14:23:18.268Z">
+<meta property="og:updated_time" content="2017-08-02T14:26:30.862Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python爬虫定向爬取中国大学排名">
-<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031323334#CrawUnivRankingA.pyimport requestsfrom bs4 import BeautifulSoupimport bs4 def getHTMLText(url):    try:        r = requests.get(url, timeout">
+<meta name="twitter:description" content="python爬虫定向爬取中国大学排名">
   
     <link rel="alternative" href="/atom.xml" title="xuptacm&#39;s blog" type="application/atom+xml">
   
@@ -229,7 +229,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">#CrawUnivRankingA.py</div><div class="line">import requests</div><div class="line">from bs4 import BeautifulSoup</div><div class="line">import bs4</div><div class="line"> </div><div class="line">def getHTMLText(url):</div><div class="line">    try:</div><div class="line">        r = requests.get(url, timeout=30)</div><div class="line">        r.raise_for_status()</div><div class="line">        r.encoding = r.apparent_encoding</div><div class="line">        return r.text</div><div class="line">    except:</div><div class="line">        return &quot;&quot;</div><div class="line"> </div><div class="line">def fillUnivList(ulist, html):</div><div class="line">    soup = BeautifulSoup(html, &quot;html.parser&quot;)</div><div class="line">    for tr in soup.find(&apos;tbody&apos;).children:</div><div class="line">        if isinstance(tr, bs4.element.Tag):</div><div class="line">            tds = tr(&apos;td&apos;)</div><div class="line">            ulist.append([tds[0].string, tds[1].string, tds[3].string])</div><div class="line"> </div><div class="line">def printUnivList(ulist, num):</div><div class="line">    print(&quot;&#123;:^10&#125;\t&#123;:^6&#125;\t&#123;:^10&#125;&quot;.format(&quot;排名&quot;,&quot;学校名称&quot;,&quot;总分&quot;))</div><div class="line">    for i in range(num):</div><div class="line">        u=ulist[i]</div><div class="line">        print(&quot;&#123;:^10&#125;\t&#123;:^6&#125;\t&#123;:^10&#125;&quot;.format(u[0],u[1],u[2]))</div><div class="line">     </div><div class="line">def main():</div><div class="line">    uinfo = []</div><div class="line">    url = &apos;http://www.zuihaodaxue.cn/zuihaodaxuepaiming2016.html&apos;</div><div class="line">    html = getHTMLText(url)</div><div class="line">    fillUnivList(uinfo, html)</div><div class="line">    printUnivList(uinfo, 20) # 20 univs</div><div class="line">main()</div></pre></td></tr></table></figure>
+        <p>python爬虫定向爬取中国大学排名</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">#CrawUnivRankingA.py</div><div class="line">import requests</div><div class="line">from bs4 import BeautifulSoup</div><div class="line">import bs4</div><div class="line"> </div><div class="line">def getHTMLText(url):</div><div class="line">    try:</div><div class="line">        r = requests.get(url, timeout=30)</div><div class="line">        r.raise_for_status()</div><div class="line">        r.encoding = r.apparent_encoding</div><div class="line">        return r.text</div><div class="line">    except:</div><div class="line">        return &quot;&quot;</div><div class="line"> </div><div class="line">def fillUnivList(ulist, html):</div><div class="line">    soup = BeautifulSoup(html, &quot;html.parser&quot;)</div><div class="line">    for tr in soup.find(&apos;tbody&apos;).children:</div><div class="line">        if isinstance(tr, bs4.element.Tag):</div><div class="line">            tds = tr(&apos;td&apos;)</div><div class="line">            ulist.append([tds[0].string, tds[1].string, tds[3].string])</div><div class="line"> </div><div class="line">def printUnivList(ulist, num):</div><div class="line">    print(&quot;&#123;:^10&#125;\t&#123;:^6&#125;\t&#123;:^10&#125;&quot;.format(&quot;排名&quot;,&quot;学校名称&quot;,&quot;总分&quot;))</div><div class="line">    for i in range(num):</div><div class="line">        u=ulist[i]</div><div class="line">        print(&quot;&#123;:^10&#125;\t&#123;:^6&#125;\t&#123;:^10&#125;&quot;.format(u[0],u[1],u[2]))</div><div class="line">     </div><div class="line">def main():</div><div class="line">    uinfo = []</div><div class="line">    url = &apos;http://www.zuihaodaxue.cn/zuihaodaxuepaiming2016.html&apos;</div><div class="line">    html = getHTMLText(url)</div><div class="line">    fillUnivList(uinfo, html)</div><div class="line">    printUnivList(uinfo, 20) # 20 univs</div><div class="line">main()</div></pre></td></tr></table></figure>
 <p>利用chr12288标准对汉字排名进行对其<br>使得界面更加美观有效！！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">#CrawUnivRankingB.py</div><div class="line">import requests</div><div class="line">from bs4 import BeautifulSoup</div><div class="line">import bs4</div><div class="line"> </div><div class="line">def getHTMLText(url):</div><div class="line">    try:</div><div class="line">        r = requests.get(url, timeout=30)</div><div class="line">        r.raise_for_status()</div><div class="line">        r.encoding = r.apparent_encoding</div><div class="line">        return r.text</div><div class="line">    except:</div><div class="line">        return &quot;&quot;</div><div class="line"> </div><div class="line">def fillUnivList(ulist, html):</div><div class="line">    soup = BeautifulSoup(html, &quot;html.parser&quot;)</div><div class="line">    for tr in soup.find(&apos;tbody&apos;).children:</div><div class="line">        if isinstance(tr, bs4.element.Tag):</div><div class="line">            tds = tr(&apos;td&apos;)</div><div class="line">            ulist.append([tds[0].string, tds[1].string, tds[3].string])</div><div class="line"> </div><div class="line">def printUnivList(ulist, num):</div><div class="line">    tplt = &quot;&#123;0:^10&#125;\t&#123;1:&#123;3&#125;^10&#125;\t&#123;2:^10&#125;&quot;</div><div class="line">    print(tplt.format(&quot;排名&quot;,&quot;学校名称&quot;,&quot;总分&quot;,chr(12288)))</div><div class="line">    for i in range(num):</div><div class="line">        u=ulist[i]</div><div class="line">        print(tplt.format(u[0],u[1],u[2],chr(12288)))</div><div class="line">     </div><div class="line">def main():</div><div class="line">    uinfo = []</div><div class="line">    url = &apos;http://www.zuihaodaxue.cn/zuihaodaxuepaiming2016.html&apos;</div><div class="line">    html = getHTMLText(url)</div><div class="line">    fillUnivList(uinfo, html)</div><div class="line">    printUnivList(uinfo, 20) # 20 univs</div><div class="line">main()</div></pre></td></tr></table></figure></p>
 
       
@@ -498,6 +500,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">namespace</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Error Contrul</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">建立站点</a>
               </li>
              
@@ -506,7 +516,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">namespace</a>
+                <a href="javascript:void(0)" class="js-tag color2">hexo教程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -518,10 +528,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">生活</a>
               </li>
              
@@ -530,11 +536,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Error Contrul</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hexo教程</a>
+                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
               </li>
             
             <div class="clearfix"></div>
