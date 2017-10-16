@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="xuptacm&#39;s blog">
 <meta property="og:description" content="异常处理的基本概念1. 为什么要异常处理►在设计各种软件系统中，处理程序中的错误和其它反常行为是非常困难的，比如服务器上长期运行的网络服务程序将80%的代码用于实现错误检测和错误处理。 ►异常是指程序运行时出现的不正常。程序运行过程中可能会出现下列异常：►（1）CPU异常。在计算过程中，出现除数为0的情况。►（2）内存异常：► 使用new或malloc申请动态内存但存储空间不够；► 数组下标越界；">
 <meta property="og:locale" content="chinese">
-<meta property="og:updated_time" content="2017-07-30T13:12:28.801Z">
+<meta property="og:updated_time" content="2017-10-16T13:22:33.374Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++异常处理">
 <meta name="twitter:description" content="异常处理的基本概念1. 为什么要异常处理►在设计各种软件系统中，处理程序中的错误和其它反常行为是非常困难的，比如服务器上长期运行的网络服务程序将80%的代码用于实现错误检测和错误处理。 ►异常是指程序运行时出现的不正常。程序运行过程中可能会出现下列异常：►（1）CPU异常。在计算过程中，出现除数为0的情况。►（2）内存异常：► 使用new或malloc申请动态内存但存储空间不够；► 数组下标越界；">
@@ -230,7 +230,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="异常处理的基本概念"><a href="#异常处理的基本概念" class="headerlink" title="异常处理的基本概念"></a><strong>异常处理的基本概念</strong></h2><p><strong>1. 为什么要异常处理</strong><br>►在设计各种软件系统中，处理程序中的错误和其它反常行为是非常<br>困难的，比如服务器上长期运行的网络服务程序将80%的代码用于<br>实现错误检测和错误处理。</p>
-<p>►异常是指程序运行时出现的不正常。程序运行过程中可能会出现下列异常：<br>►（1）CPU异常。在计算过程中，出现除数为0的情况。<br>►（2）内存异常：<br>► 使用new或malloc申请动态内存但存储空间不够；<br>► 数组下标越界；<br>► 使用野指针、迷途指针读取内存。<br>►（3）设备异常。<br>► 无法打开文件，或能够打开文件但文件有损坏，从而无法读取数据；<br>► 正在读取磁盘文件时挪动了文件或磁盘；<br>► 正在使用打印机但设备被断开；<br>► 正在使用的网络断线或阻塞。<br>►（4）用户数据异常。<br>► scanf输入时数据格式或类型有错误；<br>► 正在处理的数据库有错误；<br>► 程序假定的数据环境发生变化。</p>
+<p>►异常是指程序运行时出现的不正常。程序运行过程中可能会出现下列异常：<br>►（1）CPU异常。在计算过程中，出现除数为0的情况。<br>►（2）内存异常：<br>► 使用new或malloc申请动态内存但存储空间不够；<br>► 数组下标越界；<br>► 使用野指针、迷途指针读取内存。<br>►（3）设备异常。<br>► 无法打开文件，或能够打开文件但文件有损坏，从而无法读取数据；<br>► 正在读取磁盘文件时挪动了文件或磁盘；<br>► 正在使用打印机但设备被断开；<br>► 正在使用的网络断线或阻塞。<br>►（4）用户数据异常。<br>► scanf输入时数据格式或类型有错误；<br>► 正在处理的数据库有错误；<br>► 程序假定的数据环境发生变化。<br><a id="more"></a></p>
 <p><strong>2. 程序的健壮性</strong><br>►健壮性又称为鲁棒性，是指程序对于规范要求以外的特殊情况的处<br>理能力。<br>►健壮的程序对于规范操作以外的特殊情况能够有合理的处理方式。<br>►健壮性有时也和容错性、可移植性或正确性有交叉的地方。<br>►一个程序可以从错误的环境中推断出正确合理的内容，这是容错性<br>度量的标准，但也可以认为这个程序是健壮的。<br>►一个程序可以正确的运行在不同环境下，则认为程序的可移植性高，<br>也可以称该程序在不同平台下是健壮的。<br>►一个程序能够检测自己内部的设计或者编码错误，并得到正确的执<br>行结果，这是程序的正确性标准，但也可以说程序有内部的保护机<br>制，是健壮的。<br>►程序的健壮性是在异常情况下系统生存的关键所在，计算机程序在<br><strong>输入错误、</strong> <strong>磁盘故障、</strong> <strong>网络过载或恶意攻击的情况下能否不死机</strong>、<br><strong>不崩溃，就是程序的健壮性。</strong></p>
 <p><strong>3. 异常处理的方法</strong><br>►（1）终止模型。在终止模型中，将假设错误非常关键，以至于程<br>序无法返回异常发生的地方继续执行。一旦异常被抛出，就表明错<br>误已经无法挽回，程序不能继续执行了。<br>►（2）恢复模型。恢复模型是指异常处理程序的工作是修正错误，<br>然后重新尝试调动出问题的过程。</p>
 <p><strong>4. 异常处理的机制</strong><br>►抛出异常（throw）、检查异常（try块）、捕获异常（catch块）<br>►基本原理：把需要检测的程序放到try块中，把异常处理的程序放到<br>catch中。如果执行一个函数时出现异常，可以不在该函数中立即<br>处理，而是抛出异常信息，传递给它的上一级函数（调用函数），<br>它的上一级函数捕获到这个信息后再进行处理。如果上一级函数也<br>不处理，就逐级向上传递。如果传递到了最高一级（如main函数）<br>还不处理，最后只能异常终止程序的执行。</p>
@@ -516,11 +516,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">set</a>
+                <a href="javascript:void(0)" class="js-tag color5">namespace</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Error Contrul</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">set</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -529,10 +533,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">hexo搭建博客</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">namespace</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -548,19 +548,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">生活</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大学</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">加密</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">凯撒密码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">生活</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">大学</a>
               </li>
              
               <li class="article-tag-list-item">

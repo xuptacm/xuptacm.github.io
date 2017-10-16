@@ -17,7 +17,7 @@
 <meta property="og:description" content="基础的反转加密法就是将前后反转，这是最基础的加密方法《python密码学编程》 Hacking Secret Ciphers with Python123456789101112#基础的反转加密法#就是将前后反转，这是最基础的加密方法#《python密码学编程》 Hacking Secret Ciphers with Pythonmessage = &amp;apos;Three can keep sec">
 <meta property="og:locale" content="chinese">
 <meta property="og:image" content="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=328942168,2859236707&fm=27&gp=0.jpg">
-<meta property="og:updated_time" content="2017-10-16T13:19:09.404Z">
+<meta property="og:updated_time" content="2017-10-16T13:22:34.025Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="反转密码和凯撒密码python实现">
 <meta name="twitter:description" content="基础的反转加密法就是将前后反转，这是最基础的加密方法《python密码学编程》 Hacking Secret Ciphers with Python123456789101112#基础的反转加密法#就是将前后反转，这是最基础的加密方法#《python密码学编程》 Hacking Secret Ciphers with Pythonmessage = &amp;apos;Three can keep sec">
@@ -232,6 +232,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>基础的反转加密法<br>就是将前后反转，这是最基础的加密方法<br>《python密码学编程》 Hacking Secret Ciphers with Python<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">#基础的反转加密法</div><div class="line">#就是将前后反转，这是最基础的加密方法</div><div class="line">#《python密码学编程》 Hacking Secret Ciphers with Python</div><div class="line">message = &apos;Three can keep secret, if two of them are dead.&apos;</div><div class="line">translated = &apos; &apos;</div><div class="line"></div><div class="line">i = len(message) - 1</div><div class="line">while i &gt;= 0:</div><div class="line">    translated = translated + message[i]</div><div class="line">    i = i -1</div><div class="line"></div><div class="line">print(translated)</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p>一步步跟踪</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">#基础的反转加密法</div><div class="line">#就是将前后反转，这是最基础的加密方法</div><div class="line">#《python密码学编程》 Hacking Secret Ciphers with Python</div><div class="line">message = &apos;Three can keep secret, if two of them are dead.&apos;</div><div class="line">translated = &apos; &apos;</div><div class="line"></div><div class="line">i = len(message) - 1</div><div class="line">while i &gt;= 0:</div><div class="line">    translated = translated + message[i]</div><div class="line">    print(i,message[i],translated)</div><div class="line">    i = i -1</div><div class="line"></div><div class="line">print(translated)</div></pre></td></tr></table></figure>
 <h2 id="凯撒加密法"><a href="#凯撒加密法" class="headerlink" title="凯撒加密法"></a>凯撒加密法</h2><p>在密码学中，恺撒密码是一种最简单且最广为人知的加密技术。它是一种替换加密的技术，明文中的所有字母都在字母表上向后（或向前）按照一个固定数目进行偏移后被替换成密文。例，当偏移量是3的时候，所有的字母A将被替换成D，B变成E，以此类推。这个加密方法是以恺撒的名字命名的，当年恺撒曾用此方法与其将军们进行联系。 恺撒密码通常被作为其他更复杂的加密方法中的一个步骤。恺撒密码还在现代的ROT13系统中被应用。但是和所有的利用字母表进行替换的加密技术一样，恺撒密码非常容易被破解，而且在实际应用中也无法保证通信安全。</p>
@@ -492,11 +493,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">set</a>
+                <a href="javascript:void(0)" class="js-tag color5">namespace</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Error Contrul</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">set</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -505,10 +510,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">hexo搭建博客</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">namespace</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -524,19 +525,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">生活</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大学</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">加密</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">凯撒密码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">生活</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">大学</a>
               </li>
              
               <li class="article-tag-list-item">
