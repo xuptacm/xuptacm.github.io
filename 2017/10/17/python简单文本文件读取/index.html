@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://xuptacm.github.io">
-  <title>Archives | xuptacm&#39;s blog</title>
+  <title>python简单文本文件读取 | xuptacm&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="xuptacm&#39;s blog">
-<meta property="og:url" content="https://xuptacm.github.io/archives/page/2/index.html">
+  <meta name="description" content="Python读写文件1.open使用open打开文件后一定要记得调用文件对象的close()方法。比如可以用try/finally语句来确保最后能关闭文件。 file_object = open(‘thefile.txt’)try:     all_the_text = file_object.read( )finally:     file_object.close( ) 注：不能把open语句">
+<meta name="keywords" content="文本读取">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python简单文本文件读取">
+<meta property="og:url" content="https://xuptacm.github.io/2017/10/17/python简单文本文件读取/index.html">
 <meta property="og:site_name" content="xuptacm&#39;s blog">
+<meta property="og:description" content="Python读写文件1.open使用open打开文件后一定要记得调用文件对象的close()方法。比如可以用try/finally语句来确保最后能关闭文件。 file_object = open(‘thefile.txt’)try:     all_the_text = file_object.read( )finally:     file_object.close( ) 注：不能把open语句">
 <meta property="og:locale" content="chinese">
+<meta property="og:updated_time" content="2017-10-17T15:02:49.004Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="xuptacm&#39;s blog">
+<meta name="twitter:title" content="python简单文本文件读取">
+<meta name="twitter:description" content="Python读写文件1.open使用open打开文件后一定要记得调用文件对象的close()方法。比如可以用try/finally语句来确保最后能关闭文件。 file_object = open(‘thefile.txt’)try:     all_the_text = file_object.read( )finally:     file_object.close( ) 注：不能把open语句">
   
     <link rel="alternative" href="/atom.xml" title="xuptacm&#39;s blog" type="application/atom+xml">
   
@@ -204,291 +209,228 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-python简单文本文件读取" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/30/hexo-new-page/" class="archive-article-date">
-  	<time datetime="2017-07-30T12:04:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-30</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/30/hexo-new-page/">hexo 新建一篇文章给它添加分类和标签</a>
+    <h1 class="article-title" itemprop="name">
+      python简单文本文件读取
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/10/17/python简单文本文件读取/" class="archive-article-date">
+  	<time datetime="2017-10-17T14:59:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Python读写文件<br>1.open<br>使用open打开文件后一定要记得调用文件对象的close()方法。比如可以用try/finally语句来确保最后能关闭文件。</p>
+<p>file_object = open(‘thefile.txt’)<br>try:<br>     all_the_text = file_object.read( )<br>finally:<br>     file_object.close( )</p>
+<p>注：不能把open语句放在try块里，因为当打开文件出现异常时，文件对象file_object无法执行close()方法。</p>
+<p>2.读文件<br>读文本文件<br>input = open(‘data’, ‘r’)</p>
+<p>#第二个参数默认为r<br>input = open(‘data’)</p>
+<p>读二进制文件<br>input = open(‘data’, ‘rb’)</p>
+<p>读取所有内容<br>file_object = open(‘thefile.txt’)<br>try:<br>     all_the_text = file_object.read( )<br>finally:<br>     file_object.close( )</p>
+<p>读固定字节<br>file_object = open(‘abinfile’, ‘rb’)<br>try:<br>    while True:<br>         chunk = file_object.read(100)<br>        if not chunk:<br>            break<br>         do_something_with(chunk)<br>finally:<br>     file_object.close( )</p>
+<p>读每行<br>list_of_all_the_lines = file_object.readlines( )</p>
+<p>如果文件是文本文件，还可以直接遍历文件对象获取每行：</p>
+<p>for line in file_object:<br>     process line</p>
+<p>3.写文件<br>写文本文件<br>output = open(‘data’, ‘w’)</p>
+<p>写二进制文件<br>output = open(‘data’, ‘wb’)</p>
+<p>追加写文件<br>output = open(‘data’, ‘w+’)</p>
+<p>写数据<br>file_object = open(‘thefile.txt’, ‘w’)<br>file_object.write(all_the_text)<br>file_object.close( )</p>
+<p>写入多行<br>file_object.writelines(list_of_text_strings)</p>
+<p>注意，调用writelines写入多行在性能上会比使用write一次性写入要高。</p>
+<p>在处理日志文件的时候，常常会遇到这样的情况：日志文件巨大，不可能一次性把整个文件读入到内存中进行处理，例如需要在一台物理内存为 2GB 的机器上处理一个 2GB 的日志文件，我们可能希望每次只处理其中 200MB 的内容。<br>在 Python 中，内置的 File 对象直接提供了一个 readlines(sizehint) 函数来完成这样的事情。以下面的代码为例：</p>
+<p>file = open(‘test.log’, ‘r’)sizehint = 209715200   # 200Mposition = 0lines = file.readlines(sizehint)while not file.tell() - position &lt; 0:       position = file.tell()       lines = file.readlines(sizehint)</p>
+<p>每次调用 readlines(sizehint) 函数，会返回大约 200MB 的数据，而且所返回的必然都是完整的行数据，大多数情况下，返回的数据的字节数会稍微比 sizehint 指定的值大一点（除最后一次调用 readlines(sizehint) 函数的时候）。通常情况下，Python 会自动将用户指定的 sizehint 的值调整成内部缓存大小的整数倍。</p>
+<p>file在python是一个特殊的类型，它用于在python程序中对外部的文件进行操作。在python中一切都是对象，file也不例外，file有file的方法和属性。下面先来看如何创建一个file对象：</p>
+<p>file(name[, mode[, buffering]])<br>file()函数用于创建一个file对象，它有一个别名叫open()，可能更形象一些，它们是内置函数。来看看它的参数。它参数都是以字符串的形式传递的。name是文件的名字。<br>mode是打开的模式，可选的值为r w a U，分别代表读（默认） 写 添加支持各种换行符的模式。用w或a模式打开文件的话，如果文件不存在，那么就自动创建。此外，用w模式打开一个已经存在的文件时，原有文件的内容会被清空，因为一开始文件的操作的标记是在文件的开头的，这时候进行写操作，无疑会把原有的内容给抹掉。由于历史的原因，换行符在不同的系统中有不同模式，比如在 unix中是一个\n，而在windows中是‘\r\n’，用U模式打开文件，就是支持所有的换行模式，也就说‘\r’ ‘\n’ ‘\r\n’都可表示换行，会有一个tuple用来存贮这个文件中用到过的换行符。不过，虽说换行有多种模式，读到python中统一用\n代替。在模式字符的后面，还可以加上+ b t这两种标识，分别表示可以对文件同时进行读写操作和用二进制模式、文本模式（默认）打开文件。<br>buffering如果为0表示不进行缓冲;如果为1表示进行“行缓冲“;如果是一个大于1的数表示缓冲区的大小，应该是以字节为单位的。</p>
+<p>file对象有自己的属性和方法。先来看看file的属性。</p>
+<p>closed #标记文件是否已经关闭，由close()改写<br>encoding #文件编码<br>mode #打开模式<br>name #文件名<br>newlines #文件中用到的换行模式，是一个tuple<br>softspace #boolean型，一般为0，据说用于print</p>
+<p>file的读写方法：</p>
+<p>F.read([size]) #size为读取的长度，以byte为单位<br>F.readline([size]) </p>
+<p>#读一行，如果定义了size，有可能返回的只是一行的一部分<br>F.readlines([size]) </p>
+<p>#把文件每一行作为一个list的一个成员，并返回这个list。其实它的内部是通过循环调用readline()来实现的。如果提供size参数，size是表示读取内容的总长，也就是说可能只读到文件的一部分。<br>F.write(str) </p>
+<p>#把str写到文件中，write()并不会在str后加上一个换行符<br>F.writelines(seq) </p>
+<p>#把seq的内容全部写到文件中。这个函数也只是忠实地写入，不会在每行后面加上任何东西。<br>file的其他方法：</p>
+<p>F.close() </p>
+<p>#关闭文件。python会在一个文件不用后自动关闭文件，不过这一功能没有保证，最好还是养成自己关闭的习惯。如果一个文件在关闭后还对其进行操作会产生ValueError<br>F.flush() </p>
+<p>#把缓冲区的内容写入硬盘<br>F.fileno() </p>
+<p>#返回一个长整型的”文件标签“<br>F.isatty() </p>
+<p>#文件是否是一个终端设备文件（unix系统中的）<br>F.tell() </p>
+<p>#返回文件操作标记的当前位置，以文件的开头为原点<br>F.next() </p>
+<p>#返回下一行，并将文件操作标记位移到下一行。把一个file用于for … in file这样的语句时，就是调用next()函数来实现遍历的。<br>F.seek(offset[,whence]) </p>
+<p>#将文件打操作标记移到offset的位置。这个offset一般是相对于文件的开头来计算的，一般为正数。但如果提供了whence参数就不一定了，whence可以为0表示从头开始计算，1表示以当前位置为原点计算。2表示以文件末尾为原点进行计算。需要注意，如果文件以a或a+的模式打开，每次进行写操作时，文件操作标记会自动返回到文件末尾。<br>F.truncate([size]) </p>
+<p>#把文件裁成规定的大小，默认的是裁到当前文件操作标记的位置。如果size比文件的大小还要大，依据系统的不同可能是不改变文件，也可能是用0把文件补到相应的大小，也可能是以一些随机的内容加上去。</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line">Python 3.6.1 (v3.6.1:69c0db5, Mar 21 2017, 18:41:36) [MSC v.1900 64 bit (AMD64)] on win32</div><div class="line">Type &quot;copyright&quot;, &quot;credits&quot; or &quot;license()&quot; for more information.</div><div class="line">&gt;&gt;&gt; import os  #从标准库导入os</div><div class="line">	&gt;&gt;&gt; os.getcwd();#当前工作目录</div><div class="line">&apos;C:\\Users\\Liu\\AppData\\Local\\Programs\\Python\\Python36&apos;</div><div class="line">&gt;&gt;&gt; os.chdir(&apos;C:\\Users\\Liu\\AppData\\Local\\Programs\\Python\\Python36\\chapter3&apos;) #切换文件夹</div><div class="line">&gt;&gt;&gt; os.getcwd()</div><div class="line">&apos;C:\\Users\\Liu\\AppData\\Local\\Programs\\Python\\Python36\\chapter3&apos;</div><div class="line">&gt;&gt;&gt; data = open (&apos;exp1.txt&apos;)  #用data文件对象，打开一个文件</div><div class="line">&gt;&gt;&gt; print(data.readline(),end=&apos;&apos;)</div><div class="line">我拨通了她的电话，心里异常兴奋。啊，通了。对面传来了一个熟悉的细小的外地口音：</div><div class="line">&gt;&gt;&gt; print(data.readline(),end=&apos;&apos;)</div><div class="line"></div><div class="line">&gt;&gt;&gt; data.seek(0)   #用seek（）方法返回文件其实位置，也可以用tell（）</div><div class="line">0</div><div class="line">&gt;&gt;&gt; for each_line in data:</div><div class="line">	print(each_line,end=&apos;&apos;)</div><div class="line"></div><div class="line">	</div><div class="line">我拨通了她的电话，心里异常兴奋。啊，通了。对面传来了一个熟悉的细小的外地口音：</div><div class="line"></div><div class="line">“请问您找谁？”</div><div class="line"></div><div class="line">“英子！”</div><div class="line"></div><div class="line">“你是？陈蕾。”</div><div class="line"></div><div class="line">“对！我就是陈蕾。你好！”</div><div class="line"></div><div class="line">“你好！”她有些害羞。</div><div class="line"></div><div class="line">“你说，咱们俩都通了一年的信了，今天才第一次通过电话联络。”</div><div class="line"></div><div class="line">“是啊！俺们家前些日子刚安上电话，这陌生玩意还真有点儿用不惯。”</div><div class="line"></div><div class="line">“陈蕾，你知道吗，俺考上了镇中学呢。”</div><div class="line"></div><div class="line">“是吗，那里的老师好吗？”</div><div class="line"></div><div class="line">“比俺们小学的老师好多了，那里的老师都是从城里来的，啥都知道，我们可喜欢他们了。”</div><div class="line"></div><div class="line">“那你们家离镇中学很远吧。”</div><div class="line"></div><div class="line">“是啊，俺们家住的离学校远，每天早上可早就的走了。”</div><div class="line"></div><div class="line">“那你为什么不上你们村里的中学。”</div><div class="line"></div><div class="line">“不瞒你说，俺们一个镇就那么一所中学，俺们村好多人还上不了，学费贵啊，上不起呀，我也差点上不了，多亏了镇政府给品学兼优的学生免学费，我才能上，多不容易呀，不好好珍惜，那哪成啊。”</div><div class="line"></div><div class="line">“那么你中学上完了，你有什么打算？”</div><div class="line"></div><div class="line">“不怕你笑话，俺想考大学。俺们这里没文化，没文化吃亏啊，进诚连厕所都找不到，没文化，咱也不能世世代代都在这穷地方啊。自从上了学，俺就知道了上大学就有文化了，俺今后也要上大学，俺要当老师，俺要让村里的孩子都考上大学，俺要让村里的人都有文化。”</div><div class="line"></div><div class="line">听完这些话，我愣住了……</div><div class="line"></div><div class="line">“陈蕾，对不起，俺又要干活了，没时间聊了，有空你一定要来，俺还有好多问题要问你，对了，这些日子，俺们这里的里子熟了，可甜了，俺特地给你留了，你一定得来。再见！”</div><div class="line"></div><div class="line">“英子，再见！”</div><div class="line"></div><div class="line">挂电话后，我回想着刚才简短的几句话，英子虽然出身在贫困落后的山区，但她的思想却是上进的。同样身为中学生，我们在重点初中的重点班，拥有那么好的条件，不是更应该努力、上进吗？考上大学，一个贫困山区的淳朴的小女孩美好的愿望，虽然愿望还未实现，但是一棵希望的种子已在英子和我们的心中萌芽。</div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">import os</div><div class="line">os.getcwd()</div><div class="line">os.chdir(&apos;C:\\Users\\Liu\\AppData\\Local\\Programs\\Python\\Python36\\chapter3&apos;)</div><div class="line">data = open (&apos;exp2.txt&apos;)</div><div class="line">for each_line in data:</div><div class="line">        (role,line_spoken) = each_line.split(&apos;:&apos;)#处理数据，从每个数据行抽取各个部分，并在屏幕上显示，role是目标标识符列表，line_spoken是说的话，而话用split（“：”）分割</div><div class="line">        print(role,end=&apos;&apos;)</div><div class="line">        print(&apos; said: &apos;,end=&apos;&apos;)</div><div class="line">        print(line_spoken,end=&apos;&apos;)</div></pre></td></tr></table></figure>
+<p>注意<br>容易出现这个错误</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> said: Have you ever experienced an unforgettable event?</div><div class="line">Traceback (most recent call last):</div><div class="line">  File &quot;C:/Users/Liu/AppData/Local/Programs/Python/Python36/openBIF.py&quot;, line 6, in &lt;module&gt;</div><div class="line">    (role,line_spoken) = each_line.split(&apos;:&apos;)</div><div class="line">ValueError: not enough values to unpack (expected 2, got 1)</div></pre></td></tr></table></figure>
+<p>这是因为写的无法识别一行出现两个：或者是缺少：的行，所以爆出valueerror 值错误<br>所以要注意自己的文本文档<br>或者是在split里多加多个：<br>或者是each_line.split(‘:’,1)这个参数控制split（）如何分解</p>
+<p>但是这不是最好的解决办法<br>最好的解决办法如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">import os</div><div class="line">os.getcwd()</div><div class="line">os.chdir(&apos;C:\\Users\\Liu\\AppData\\Local\\Programs\\Python\\Python36\\chapter3&apos;)</div><div class="line">data = open (&apos;exp2.txt&apos;)</div><div class="line">for each_line in data:</div><div class="line">    if not each_line.find(&apos;:&apos;)== -1:</div><div class="line">        (role,line_spoken) = each_line.split(&apos;:&apos;，1)</div><div class="line">        print(role,end=&apos;&apos;)</div><div class="line">        print(&apos; said: &apos;,end=&apos;&apos;)</div><div class="line">        print(line_spoken,end=&apos;&apos;)</div><div class="line">data.close()</div></pre></td></tr></table></figure>
+<h2 id="POINT-不要忘记data-close-哦"><a href="#POINT-不要忘记data-close-哦" class="headerlink" title="POINT :不要忘记data.close()哦"></a>POINT :不要忘记data.close()哦</h2><h2 id="正确结果"><a href="#正确结果" class="headerlink" title="正确结果"></a>正确结果</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">== RESTART: C:/Users/Liu/AppData/Local/Programs/Python/Python36/openBIF.py ==</div><div class="line">A said: Have you ever experienced an unforgettable event?</div><div class="line">B said: Yes,I have,that&apos;s one of the most wonderful memories in my life.</div><div class="line">A said: What did you experience?</div><div class="line">B said: I witnessed that chinese national football team got the qualification for the 2002 world cup on October 13,2001.</div><div class="line">A said: What did you see?</div><div class="line">B said: Because my home is very close to the Tian&apos;anmen Square.I saw everybody was celebrating happily and excitedly.There were cheers and shouts in the streets.</div><div class="line">A said: Did you join the crowds?</div><div class="line">B said: Of course.I walked on the streets with my family for a while.The traffic was terrible.The streets looked like a parking alot and can&apos;t move at all.But it seemed that nobody care it at all because they were all losing themselves in the excitement and enjoyment that our football team brought us.</div><div class="line">A said: Sounds really awesome.</div><div class="line">B said: yes,it definitely is.</div><div class="line">A said: I hope chinese football team could give us that feeling again in the future.</div><div class="line">B said: I hope so,too.</div></pre></td></tr></table></figure>
+<p>其实可以在IDLE 里查找help（）BIF。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://wx2.sinaimg.cn/mw690/006fOAflgy1fkket5txfyj30u019i437.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">hexo教程</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">文本读取</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Hexo/" class="article-tag-list-link color5">Hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/29/my-new-post/" class="archive-article-date">
-  	<time datetime="2017-07-29T13:08:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/29/my-new-post/">hexo搭建博客目录分析</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-&#39;my">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/29/first-blog/" class="archive-article-date">
-  	<time datetime="2017-07-29T12:58:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/29/first-blog/">大家好，这是我的第一篇博文&#39;</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">建立站点</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">hexo搭建博客</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/HEXO/" class="article-tag-list-link color5">HEXO</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/29/article-title/" class="archive-article-date">
-  	<time datetime="2017-07-29T11:34:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/29/article-title/">hexo搭建博客文章目录分析</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">建立站点</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">hexo搭建博客</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/HEXO/" class="article-tag-list-link color5">HEXO</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/29/hello-world/" class="archive-article-date">
-  	<time datetime="2017-07-29T10:16:31.036Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-29</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
       
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/06/01/hexo教程/" class="archive-article-date">
-  	<time datetime="2016-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/06/01/hexo教程/">Hexo目录分类教程</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">建立站点</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">hexo搭建博客</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/HEXO/" class="article-tag-list-link color5">HEXO</a>
+        			<a href="/categories/python/" class="article-tag-list-link color2">python</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://xuptacm.github.io/2017/10/17/python简单文本文件读取/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/10/16/反转密码和凯撒密码python实现/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">反转密码和凯撒密码python实现</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-    </nav>
+  
+
   
 
 
@@ -512,8 +454,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
